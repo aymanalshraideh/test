@@ -24,13 +24,13 @@
                 <div class="col-md-4 pt-5">
                     <h2 class="h2 text-light border-bottom pb-3 border-light">Products</h2>
                     <ul class="list-unstyled text-light footer-link-list">
-                        <li><a class="text-decoration-none" href="#">Luxury</a></li>
-                        <li><a class="text-decoration-none" href="#">Sport Wear</a></li>
-                        <li><a class="text-decoration-none" href="#">Men's Shoes</a></li>
-                        <li><a class="text-decoration-none" href="#">Women's Shoes</a></li>
-                        <li><a class="text-decoration-none" href="#">Popular Dress</a></li>
-                        <li><a class="text-decoration-none" href="#">Gym Accessories</a></li>
-                        <li><a class="text-decoration-none" href="#">Sport Shoes</a></li>
+                    <?php $sql='SELECT * FROM categories';
+$statement=$db->query($sql);
+$data=$statement->fetchAll();
+foreach($data as $value): ?>
+<li><a class="text-decoration-none" href="store.php?category=<?php echo $value['category_id']?>"><?php echo $value['category_name'];?></a></li>
+                        <?php endforeach; ?>
+                       
                     </ul>
                 </div>
 
@@ -99,7 +99,9 @@
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/templatemo.js"></script>
     <script src="assets/js/custom.js"></script>
+    
     <!-- End Script -->
+    
 </body>
 
 </html>
