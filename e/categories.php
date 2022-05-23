@@ -112,8 +112,7 @@
                     if(isset($_GET["sort"])){
                         $value=$_GET["sort"];
                     }else{
-                    $value=0 ;
-                }
+                    $value=0 ;}
                     if($value =='1'){
                         
 
